@@ -26,9 +26,10 @@ const ENTRY_COMPONENTS = [
     ThemedBrowseBySwitcherComponent,
     ...ENTRY_COMPONENTS
   ],
-  exports: [
-    BrowseBySwitcherComponent
-  ]
+    exports: [
+        BrowseBySwitcherComponent,
+        BrowseByDatePageComponent
+    ]
 })
 export class BrowseByModule {
   /**
