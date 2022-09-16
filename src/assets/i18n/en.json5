@@ -640,7 +640,7 @@
   "bitstream-request-a-copy.alert.canDownload2": "here",
 
   "bitstream-request-a-copy.header": "Request a copy of the file",
-  
+
   "bitstream-request-a-copy.intro": "Enter the following information to request a copy for the following item: ",
 
   "bitstream-request-a-copy.intro.bitstream.one": "Requesting the following file: ",
@@ -2519,7 +2519,7 @@
 
   "login.form.forgot-password": "Have you forgotten your password?",
 
-  "login.form.header": "Please log in to DSpace",
+  "login.form.header": "Please log in",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -2984,7 +2984,7 @@
   "process.detail.create" : "Create similar process",
 
   "process.detail.actions": "Actions",
-  
+
   "process.detail.delete.button": "Delete process",
 
   "process.detail.delete.header": "Delete process",
@@ -3037,7 +3037,7 @@
 
   "process.bulk.delete.success": "{{count}} process(es) have been succesfully deleted",
 
-  
+
 
   "profile.breadcrumbs": "Update Profile",
 
@@ -3202,7 +3202,7 @@
 
   "register-page.registration.header": "New user registration",
 
-  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
+  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items.",
 
   "register-page.registration.email": "Email Address *",
 
@@ -3269,9 +3269,9 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title.prefix": "DSpace Angular :: ",
+  "repository.title.prefix": "Sigma Repository :: ",
 
-  "repository.title.prefixDSpace": "DSpace Angular ::",
+  "repository.title.prefixDSpace": "Sigma Repository ::",
 
 
   "resource-policies.add.button": "Add",

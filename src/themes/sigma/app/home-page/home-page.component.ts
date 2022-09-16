@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { HomePageComponent as BaseComponent } from '../../../../app/home-page/home-page.component';
+
 
 @Component({
   selector: 'ds-home-page',
@@ -7,5 +8,4 @@ import { HomePageComponent as BaseComponent } from '../../../../app/home-page/ho
   templateUrl: './home-page.component.html'
 })
 export class HomePageComponent extends BaseComponent {
-
 }
