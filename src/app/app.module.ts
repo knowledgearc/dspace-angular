@@ -31,6 +31,7 @@ import { APP_CONFIG, AppConfig } from '../config/app-config.interface';
 import { NgxMaskModule } from 'ngx-mask';
 import { StoreDevModules } from '../config/store/devtools';
 import { RootModule } from './root.module';
+import {CommunityListPageModule} from "./community-list-page/community-list-page.module";
 
 export function getConfig() {
   return environment;
@@ -70,7 +71,7 @@ const IMPORTS = [
   StoreRouterConnectingModule.forRoot(),
   StoreDevModules,
   EagerThemesModule,
-  RootModule,
+  RootModule, CommunityListPageModule
 ];
 
 const PROVIDERS = [

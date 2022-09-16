@@ -10,8 +10,6 @@ import { SearchModule } from '../../app/shared/search/search.module';
 import { RootModule } from '../../app/root.module';
 import { NavbarModule } from '../../app/navbar/navbar.module';
 import {HomePageComponent} from './app/home-page/home-page.component';
-import {CommunityListPageComponent} from './app/community-list-page/community-list-page.component';
-import {CommunityListComponent} from './app/community-list-page/community-list/community-list.component';
 import {
   TopLevelCommunityListComponent
 } from './app/home-page/top-level-community-list/top-level-community-list.component';
@@ -35,7 +33,6 @@ const DECLARATIONS = [
   HeaderComponent,
   HeaderNavbarWrapperComponent,
   NavbarComponent,
-  CommunityListPageComponent,
   TopLevelCommunityListComponent,
   BrowseBySwitcherComponent
 ];
@@ -52,7 +49,6 @@ const DECLARATIONS = [
   ],
   declarations: [
     DECLARATIONS,
-    CommunityListComponent,
     RecentlyAddedComponent,
     SidebarComponent,
     SigmaHomesidebarSearchComponent
