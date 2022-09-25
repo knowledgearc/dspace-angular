@@ -18,6 +18,10 @@ import {BrowseBySwitcherComponent} from './app/browse-by/browse-by-switcher/brow
 import { RecentlyAddedComponent } from './app/home-page/recently-added/recently-added.component';
 import { SidebarComponent } from './app/home-page/sidebar/sidebar.component';
 import { SigmaHomesidebarSearchComponent } from './app/home-page/sidebar/sigma-homesidebar-search/sigma-homesidebar-search.component';
+import { FooterComponent } from './app/footer/footer.component';
+import {RootComponent} from './app/root/root.component';
+import { ContactComponent } from './app/contact/contact.component';
+import {LoginPageComponent} from "./app/login-page/login-page.component";
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -49,9 +53,11 @@ const DECLARATIONS = [
   ],
   declarations: [
     DECLARATIONS,
+    RootComponent,
     RecentlyAddedComponent,
-    SidebarComponent,
-    SigmaHomesidebarSearchComponent
+    SidebarComponent, FooterComponent, LoginPageComponent,
+    SigmaHomesidebarSearchComponent,
+    ContactComponent
   ],
   providers: [
     ...ENTRY_COMPONENTS.map((component) => ({ provide: component }))

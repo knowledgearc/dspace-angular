@@ -1,0 +1,14 @@
+<div class="container w-100 h-100">
+  <div class="text-center mt-5 row justify-content-center">
+    <div class="login-page-form pt-2">
+<!--      <img class="mb-4 login-logo" src="assets/images/dspace-logo.png">-->
+      <a class="my-5 py-5" routerLink="/home">
+        <img src="/assets/sigma/images/sigma-repository-logo.png"
+             [attr.alt]="'menu.header.image.logo' | translate" class="p-4" />
+      </a>
+      <h1 class="h3 mb-0 font-weight-normal mt-4">{{"login.form.header" | translate}}</h1>
+      <ds-log-in
+      [isStandalonePage]="true"></ds-log-in>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,12 @@
 // imports the base global style
 @import '../../../styles/_global-styles.scss';
 
+body {
+  font-size: 14px !important;
+  line-height: 1.52857 !important;
+  color: #252525 !important;
+  font-family: Source Sans Pro, Arial, sans-serif;
+}
 .facet-filter, .setting-option {
   background-color: var(--bs-light);
   border-radius: var(--bs-border-radius);
@@ -34,4 +40,43 @@ header {
    }
 }
 
+.first-page-header {
+  margin-bottom: 14px;
+  font-size: 25px;
+  color: #5e50a1;
+}
 
+.first-page-subheader{
+  font-size: 20px;
+  color: #5e50a1;
+}
+
+a {
+  color: #45b2e9 !important;
+  text-decoration: none;
+}
+
+.mb-4, .my-4, .mt-4 {
+  margin-bottom: .5rem !important;
+  margin-top: .5rem !important;
+}
+.lead {
+  //font-size: 1.25rem;
+  font-weight: 300;
+  font-size: 16px !important;
+  line-height: 1.52857 !important;
+}
+
+.btn-primary {
+  border-color: #45b2e9;
+  background: #45b2e9;
+}
+
+.pagination-masked{
+  display: none;
+}
+
+.login-page-form{
+  background-color: #e9ecef;
+  padding-top: 10px;
+}

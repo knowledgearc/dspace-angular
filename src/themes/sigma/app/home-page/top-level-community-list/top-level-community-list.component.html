@@ -1,6 +1,6 @@
 <ng-container *ngVar="(communitiesRD$ | async) as communitiesRD">
   <div *ngIf="communitiesRD?.hasSucceeded ">
-  <h2>Communities in this Repository</h2>
+  <h2 class="first-page-subheader my-3">Communities in this Repository</h2>
   <p class="lead">{{'home.top-level-communities.help' | translate}}</p>
   <ds-viewable-collection
     [config]="config"

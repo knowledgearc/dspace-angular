@@ -68,20 +68,23 @@ const DECLARATIONS = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    SearchModule,
-    FormsModule,
-    RootModule,
-    NavbarModule,
-    ItemPageModule,
-    ItemSharedModule,
-  ],
-  declarations: DECLARATIONS,
-  providers: [
-    ...ENTRY_COMPONENTS.map((component) => ({ provide: component }))
-  ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        SearchModule,
+        FormsModule,
+        RootModule,
+        NavbarModule,
+        ItemPageModule,
+        ItemSharedModule,
+    ],
+    declarations: DECLARATIONS,
+    providers: [
+        ...ENTRY_COMPONENTS.map((component) => ({provide: component}))
+    ],
+    exports: [
+        FooterComponent
+    ]
 })
 /**
  * This module is included in the main bundle that gets downloaded at first page load. So it should

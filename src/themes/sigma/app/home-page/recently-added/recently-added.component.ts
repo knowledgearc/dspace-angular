@@ -13,6 +13,7 @@ import { SortDirection, SortOptions} from '../../../../../app/core/cache/models/
 import { DSpaceObjectType} from '../../../../../app/core/shared/dspace-object-type.model';
 import { toDSpaceObjectListRD} from '../../../../../app/core/shared/operators';
 import {Observable, Subscription } from 'rxjs';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'ds-recently-added',
@@ -35,7 +36,7 @@ export class RecentlyAddedComponent implements OnInit {
 
     // this.paginationConfig.pageSize = environment.rpp;
     // this.paginationConfig.pageSize = new DefaultAppConfig().rpp;
-    this.paginationConfig.pageSize = 20;
+    this.paginationConfig.pageSize = 8;
     this.paginationConfig.currentPage = 1;
     this.sortConfig = new SortOptions('dc.date.accessioned', SortDirection.DESC);
   }
