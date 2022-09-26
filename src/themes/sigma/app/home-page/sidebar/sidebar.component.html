@@ -1,49 +1,82 @@
 <div class="card border-0">
-  <div class="card-body">
+  <div class="card-body p-0">
 
 <!--    <ds-search-form searchPlaceholder="Search ..." ></ds-search-form>-->
     <ds-sigma-homesidebar-search></ds-sigma-homesidebar-search>
 
-    <h5 class="card-title">Browse</h5>
+    <h5 class="card-title sidebar-header">Browse</h5>
     <ul class="list-group border-0-li">
       <li class="list-group-item border-0">
-        <a routerLink="/community-list" class=""> Communities & Collections</a>
+        <a routerLink="/community-list" class="">Communities & Collections</a>
       </li>
       <li class="list-group-item">
         <a routerLink="/browse/dateissued">Publication Date</a>
       </li>
-      <li class="list-group-item">Posting Date</li>
+      <li class="list-group-item">
+        <a routerLink="/browse/dateaccessioned">Posting Date</a>
+      </li>
       <li class="list-group-item">
         <a routerLink="/browse/author">Author</a></li>
       <li class="list-group-item">
         <a routerLink="/browse/title">Title</a>
       </li>
       <li class="list-group-item">
-        <a routerLink="/browse/subject">Subject</a>
+        <a routerLink="/browse/subjectcinahl">Subject(CINAHL)</a>
       </li>
-      <li class="list-group-item">Item Type</li>
-      <li class="list-group-item">Item Format</li>
-      <li class="list-group-item">Level of Evidence</li>
-      <li class="list-group-item">Research Approach</li>
-      <li class="list-group-item">Subjects (CINAHL)</li>
-      <li class="list-group-item">Sigma Chapters</li>
-      <li class="list-group-item">Author Affiliations</li>
-      <li class="list-group-item">Funders</li>
-      <li class="list-group-item">Funders</li>
-      <li class="list-group-item">Review Type</li>
+      <li class="list-group-item">
+        <a routerLink="/browse/itemtype">Item Type</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/format">Item Format</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/evidencelevel">Level of Evidence</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/researchapproach">Research Approach</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/contributordepartment">Sigma Chapters</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/contributoraffiliation">Author Affiliations</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/descriptionsponsorship">Funders</a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="/browse/descriptionreviewtype">Review Type</a>
+      </li>
     </ul>
   </div>
 </div>
 
 <div class="card border-0">
-  <div class="card-body">
-    <h5 class="card-title">My Account</h5>
+  <div class="card-body p-0">
+    <h5 class="card-title sidebar-header">My Account</h5>
     <ul class="list-group border-0-li">
       <li class="list-group-item border-0">
         <a routerLink="/login" class="">Login</a>
       </li>
       <li class="list-group-item border-0">
         <a routerLink="/register" class="">Register</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="card border-0">
+  <div class="card-body p-0">
+    <h5 class="card-title sidebar-header">New? Questions? Start Here!</h5>
+    <ul class="list-group border-0-li">
+      <li class="list-group-item border-0">
+        <a href="https://www.sigmarepository.org/information-hub/" class="">Information Hub</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="https://www.sigmarepository.org/news/" class="">Important Notices</a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="https://www.sigmarepository.org/access-to-evidence/" class="">Need Access to Evidence</a>
       </li>
     </ul>
   </div>
