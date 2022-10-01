@@ -89,3 +89,21 @@ a {
   padding-left: 9px;
   text-transform: uppercase;
 }
+
+.border-0-li li{
+  border: none;
+  padding: 6px;
+  color: #555;
+}
+.border-0-li li a, .border-0-li li a:hover{
+  color: #555 !important;
+  text-decoration: none;
+}
+
+.border-0-li li:hover{
+  background-color: #eee;
+}
+
+.border-0-li li a{
+
+}

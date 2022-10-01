@@ -7,6 +7,9 @@ dspace-angular
 
 Overview
 --------
+```
+yarn merge-i18n -s src/themes/[theme-name]/assets/i18n
+```
 
 DSpace open source software is a turnkey repository application used by more than
 2,000 organizations and institutions worldwide to provide durable access to digital resources.

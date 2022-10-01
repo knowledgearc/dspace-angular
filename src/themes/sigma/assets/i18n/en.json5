@@ -1,0 +1,37 @@
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse Repository",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "Sigma Repository :: ",
+
+  "browse.metadata.dateaccessioned.breadcrumbs": "Browse by Date Accessioned",
+  "browse.metadata.dateaccessioned": "Date Accessioned",
+
+  "browse.metadata.subjectcinahl.breadcrumbs": "Browse by Subjects(CINAHL)",
+  "browse.metadata.subjectcinahl": "Subject(CINAHL)",
+
+  "browse.metadata.itemtype.breadcrumbs": "Browse by Item Type",
+  "browse.metadata.itemtype": "Item Type",
+
+  "browse.metadata.format.breadcrumbs": "Browse by Format",
+  "browse.metadata.format": "Format",
+
+  "browse.metadata.evidencelevel.breadcrumbs": "Browse by Level of Evidence",
+  "browse.metadata.evidencelevel": "Level of Evidence",
+
+  "browse.metadata.researchapproach.breadcrumbs": "Browse by Research Approach",
+  "browse.metadata.researchapproach": "Research Approach",
+
+  "browse.metadata.contributordepartment.breadcrumbs": "Browse by Sigma Chapters",
+  "browse.metadata.contributordepartment": "Sigma Chapters",
+
+  "browse.metadata.contributoraffiliation.breadcrumbs": "Browse by Author Affiliations",
+  "browse.metadata.contributoraffiliation": "Author Affiliations",
+
+  "browse.metadata.descriptionsponsorship.breadcrumbs": "Browse by Funders",
+  "browse.metadata.descriptionsponsorship": "Funders",
+
+  "browse.metadata.descriptionreviewtype.breadcrumbs": "Browse by Review Type",
+  "browse.metadata.descriptionreviewtype": "Review Type"
+}
