@@ -12,7 +12,7 @@ import { EagerThemeModule as SigmaEagerThemeModule } from './sigma/eager-theme.m
   imports: [
     //DSpaceEagerThemeModule,
     SigmaEagerThemeModule
-  ],
+  ]
 })
 export class EagerThemesModule {
 }

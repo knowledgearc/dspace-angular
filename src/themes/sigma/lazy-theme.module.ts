@@ -40,7 +40,6 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomePageModule } from '../../app/home-page/home-page.module';
 import { AppModule } from '../../app/app.module';
-import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { RouterModule } from '@angular/router';
 import { CommunityListPageModule } from '../../app/community-list-page/community-list-page.module';
 import { InfoModule } from '../../app/info/info.module';
@@ -55,8 +54,18 @@ import {
 } from '../../app/shared/resource-policies/resource-policies.module';
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
+import {ItemPageModule} from '../../app/item-page/item-page.module';
+// import {UntypedItemComponent} from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
+import {ItemPageComponent} from './app/item-page/simple/item-page.component';
+import {FullItemPageComponent} from './app/item-page/full/full-item-page.component';
+import {ItemMetadataComponent} from './app/item-page/edit-item-page/item-metadata/item-metadata.component';
+import {FileSectionComponent} from './app/item-page/simple/field-components/file-section/file-section.component';
+import {PublicationComponent} from './app/item-page/simple/item-types/publication/publication.component';
+
 
 const DECLARATIONS = [
+  ItemPageComponent, FullItemPageComponent, ItemMetadataComponent,
+  FileSectionComponent, PublicationComponent
 ];
 
 @NgModule({
@@ -76,13 +85,13 @@ const DECLARATIONS = [
     CommunityPageModule,
     CoreModule,
     DragDropModule,
-    ItemPageModule,
     EditItemPageModule,
     FormsModule,
     HomePageModule,
     HttpClientModule,
     IdlePreloadModule,
     InfoModule,
+    ItemPageModule,
     JournalEntitiesModule,
     MenuModule,
     MyDspaceSearchModule,
@@ -106,9 +115,11 @@ const DECLARATIONS = [
     SearchModule,
     FormsModule,
     ResourcePoliciesModule,
-    ComcolModule,
+    ComcolModule
   ],
-  declarations: DECLARATIONS,
+  declarations: [
+    ...DECLARATIONS
+  ],
 })
 
 /**

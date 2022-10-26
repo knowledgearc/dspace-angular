@@ -21,13 +21,16 @@ import { SigmaHomesidebarSearchComponent } from './app/home-page/sidebar/sigma-h
 import { FooterComponent } from './app/footer/footer.component';
 import {RootComponent} from './app/root/root.component';
 import { ContactComponent } from './app/contact/contact.component';
-import {LoginPageComponent} from "./app/login-page/login-page.component";
+import {LoginPageComponent} from './app/login-page/login-page.component';
+import {UntypedItemComponent} from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
+import {ItemPageModule} from '../../app/item-page/item-page.module';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
  */
 const ENTRY_COMPONENTS = [
+  UntypedItemComponent
 ];
 
 const DECLARATIONS = [
@@ -49,7 +52,7 @@ const DECLARATIONS = [
     FormsModule,
     RootModule,
     NavbarModule,
-    BrowseByModule
+    BrowseByModule, ItemPageModule
   ],
   declarations: [
     DECLARATIONS,
