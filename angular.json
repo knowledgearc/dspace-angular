@@ -153,9 +153,7 @@
                 "bundleName": "base-theme"
               }
             ],
-            "scripts": [
-              "src/themes/sigma/assets/js/masonry.pkgd.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "test": {

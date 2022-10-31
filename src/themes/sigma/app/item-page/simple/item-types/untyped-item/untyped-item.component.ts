@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { Item } from '../../../../../../../app/core/shared/item.model';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
 import {
@@ -8,6 +8,7 @@ import { Context } from '../../../../../../../app/core/shared/context.model';
 import {
   UntypedItemComponent as BaseComponent
 } from '../../../../../../../app/item-page/simple/item-types/untyped-item/untyped-item.component';
+import * as Masonry from 'masonry-layout';
 
 /**
  * Component that represents an untyped Item page
@@ -19,5 +20,17 @@ import {
   templateUrl: './untyped-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UntypedItemComponent extends BaseComponent {
+export class UntypedItemComponent extends BaseComponent implements OnInit{
+
+  ngOnInit() {
+    super.ngOnInit();
+
+    let msnry = new Masonry( '.grid', {
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: 200
+    });
+
+    console.log(this.object);
+  }
 }

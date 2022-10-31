@@ -1,89 +1,74 @@
-<h2 class="item-page-title-field mr-auto">
-  <ds-metadata-values [mdValues]="object?.allMetadata(['dc.title'])"></ds-metadata-values>
-</h2>
 
-<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 687.332px;">
-  <ng-container *ngIf="!mediaViewer.image">
-    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
-      <div class="card">
-        <div class="card-body">
-          <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
-            <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
-          </ds-metadata-field-wrapper>
-          <ds-themed-item-page-file-section [item]="object"></ds-themed-item-page-file-section>
+
+<div class="row">
+  <div class="col-md-3 col-sm-4">the SIDEBAR</div>
+  <div class="col-md-9 col-sm-8">
+    <h2 class="item-page-title-field mr-auto">
+      <ds-metadata-values [mdValues]="object?.allMetadata(['dc.title'])"></ds-metadata-values>
+    </h2>
+
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+        <div class="card" id="thumbnail-card">
+          <div class="card-header purple-bg">
+            <h5 class="card-title p-0">View File(s)</h5>
+          </div>
+          <div class="card-body">
+            <ng-container *ngIf="!mediaViewer.image">
+              <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
+                <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
+              </ds-metadata-field-wrapper>
+              <ds-themed-item-page-file-section [item]="object"></ds-themed-item-page-file-section>
+            </ng-container>
+          </div>
         </div>
       </div>
-    </div>
-  </ng-container>
+      <div class="col-md-9 col-sm-8">
+        <div class="card">
+          <div class="card-header purple-bg p-0">
+            <h5 class="card-title p-0">Item Information</h5>
+          </div>
+          <div class="card-body">
 
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
-    <div class="card p-3">
-      <figure class="p-3 mb-0">
-        <blockquote class="blockquote">
-          <p>A well-known quote, contained in a blockquote element.</p>
-        </blockquote>
-        <figcaption class="blockquote-footer mb-0 text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
-    <div class="card">
-      <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+            <div class="card" *ngIf="object.hasMetadata(['dc.identifier.uri'])">
+              <div class="card-header">
+                <h6 class="card-title">Item Link - Use this link for citations and online mentions.</h6>
+              </div>
+              <div class="card-body">
+                <ds-metadata-values [mdValues]="object?.allMetadata(['dc.identifier.uri'])"></ds-metadata-values>
+              </div>
+            </div>
 
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 170.333px;">
-    <div class="card bg-primary text-white text-center p-3">
-      <figure class="mb-0">
-        <blockquote class="blockquote">
-          <p>A well-known quote, contained in a blockquote element.</p>
-        </blockquote>
-        <figcaption class="blockquote-footer mb-0 text-white">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 308.666px;">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 361.333px;">
-    <div class="card">
-      <svg class="bd-placeholder-img card-img" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Card image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card image</text></svg>
+            <div class="card mt-4" *ngIf="object.hasMetadata(['dc.description.abstract'])">
+              <div class="card-header"><h6 class="card-title">Abstract</h6></div>
+              <div class="card-body">
+                <ds-metadata-values
+                  [mdValues]="object?.allMetadata(['dc.description.abstract'])"></ds-metadata-values>
+              </div>
+            </div>
 
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 377.333px;">
-    <div class="card p-3 text-end">
-      <figure class="mb-0">
-        <blockquote class="blockquote">
-          <p>A well-known quote, contained in a blockquote element.</p>
-        </blockquote>
-        <figcaption class="blockquote-footer mb-0 text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 485.999px;">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="card mt-4" *ngIf="object.hasMetadata(['dc.date.accessioned'])">
+              <div class="card-header"><h6 class="card-title">Repository Posting Date</h6></div>
+              <div class="card-body">
+                <ds-metadata-values
+                  [mdValues]="object?.allMetadata(['dc.date.accessioned'])"></ds-metadata-values>
+              </div>
+            </div>
+
+            <div class="grid">
+              <div class="grid-item">
+                <div class="card">
+                  <div class="card-header p-0"><h6 class="card-title">Type Information</h6></div>
+                  <div class="card-body">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
