@@ -25,11 +25,11 @@ export class UntypedItemComponent extends BaseComponent implements OnInit{
   ngOnInit() {
     super.ngOnInit();
 
-    let msnry = new Masonry( '.grid', {
-      // options
-      itemSelector: '.grid-item',
-      columnWidth: 200
-    });
+    // let msnry = new Masonry( '.grid', {
+    //   // options
+    //   itemSelector: '.grid-item',
+    //   columnWidth: 200
+    // });
 
     console.log(this.object);
   }
