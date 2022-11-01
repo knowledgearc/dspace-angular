@@ -30,7 +30,6 @@ export class UntypedItemComponent extends BaseComponent implements OnInit{
     //   itemSelector: '.grid-item',
     //   columnWidth: 200
     // });
-
     console.log(this.object);
   }
 }
