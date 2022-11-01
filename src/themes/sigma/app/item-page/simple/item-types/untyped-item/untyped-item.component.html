@@ -1,18 +1,21 @@
 
 
 <div class="row">
-  <div class="col-md-3 col-sm-4">the SIDEBAR</div>
+  <div class="col-md-3 col-sm-4">
+    THE SIDEBAR
+    <ds-dso-page-edit-button [pageRoute]="itemPageRoute"
+                             [dso]="object" [tooltipMsg]="'item.page.edit'"></ds-dso-page-edit-button>
+  </div>
   <div class="col-md-9 col-sm-8">
-    <h2 class="item-page-title-field mr-auto">
-      <ds-metadata-values [mdValues]="object?.allMetadata(['dc.title'])"></ds-metadata-values>
+
+    <h2 class="page-header first-page-header" *ngIf="object?.hasMetadata(['dc.title'])">
+      {{ object.firstMetadataValue(['dc.title']) }}
     </h2>
 
     <div class="row">
       <div class="col-md-3 col-sm-4">
         <div class="card" id="thumbnail-card">
-          <div class="card-header purple-bg">
-            <h5 class="card-title p-0">View File(s)</h5>
-          </div>
+          <div class="card-header purple-bg"><h5 class="card-title">View File(s)</h5></div>
           <div class="card-body">
             <ng-container *ngIf="!mediaViewer.image">
               <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
@@ -25,8 +28,8 @@
       </div>
       <div class="col-md-9 col-sm-8">
         <div class="card">
-          <div class="card-header purple-bg p-0">
-            <h5 class="card-title p-0">Item Information</h5>
+          <div class="card-header purple-bg">
+            <h5 class="card-title">Item Information</h5>
           </div>
           <div class="card-body">
 
@@ -55,10 +58,19 @@
               </div>
             </div>
 
-            <div class="grid">
+            <div class="grid" #grid>
               <div class="grid-item">
                 <div class="card">
-                  <div class="card-header p-0"><h6 class="card-title">Type Information</h6></div>
+                  <div class="card-header"><h6 class="card-title">Type Information</h6></div>
+                  <div class="card-body">
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                <div class="card">
+                  <div class="card-header"><h6 class="card-title">Category Information</h6></div>
                   <div class="card-body">
 
                   </div>

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Item } from '../../../../../../../app/core/shared/item.model';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
 import {
@@ -22,14 +22,13 @@ import * as Masonry from 'masonry-layout';
 })
 export class UntypedItemComponent extends BaseComponent implements OnInit{
 
+  @ViewChild('grid')
+  grid: ElementRef;
+
   ngOnInit() {
     super.ngOnInit();
 
-    // let msnry = new Masonry( '.grid', {
-    //   // options
-    //   itemSelector: '.grid-item',
-    //   columnWidth: 200
-    // });
-    console.log(this.object);
+    // console.log(this.object);
+    console.log(this.object.bundles)
   }
 }
