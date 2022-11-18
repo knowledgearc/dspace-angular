@@ -4,9 +4,9 @@
     <h2 class="first-page-subheader my-4 mt-5">Recently Added</h2>
     <ds-object-list [objects]="itemRD"
                     [showPaginator]="true"
-                    [hideGear]="true"
-                    [hidePaginationDetail]="true"
-                    [hasBorder]="false">
+                    [hideGear]="false"
+                    [hidePaginationDetail]="false"
+                    [hasBorder]="true">
     </ds-object-list>
 <!--    <a href="/search?spc.page=1&spc.sf=dc.date.accessioned&spc.sd=DESC"-->
     <a routerLink="/browse/dateissued"

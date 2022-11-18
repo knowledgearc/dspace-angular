@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { Item } from '../../../../../../../app/core/shared/item.model';
 import { ViewMode } from '../../../../../../../app/core/shared/view-mode.model';
 import {

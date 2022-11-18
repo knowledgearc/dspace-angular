@@ -2245,6 +2245,13 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/jquery@*":
+  "integrity" "sha512-X1gtMRMbziVQkErhTQmSe2jFwwENA/Zr+PprCkF63vFq+Yt5PZ4AlKqgmeNlwgn7dhsXEK888eIW2520EpC+xg=="
+  "resolved" "https://registry.npmjs.org/@types/jquery/-/jquery-3.5.14.tgz"
+  "version" "3.5.14"
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/js-cookie@2.2.6":
   "integrity" "sha512-+oY0FDTO2GYKEV0YPvSshGq9t7YozVkgvXLty7zogQNuCxBhT9/3INX9Q7H1aRZ4SUDRXAKlJuA4EA5nTt7SNw=="
   "resolved" "https://registry.npmjs.org/@types/js-cookie/-/js-cookie-2.2.6.tgz"
@@ -2264,6 +2271,13 @@
   "integrity" "sha512-uwc1x90yCKqGcIOAT6DwOSuxnrAbpkdPsUOZtwrXb4D/6wZs+6qG7QnIawDuZWg0sWpxl+ltIKCaLoMlna678w=="
   "resolved" "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.179.tgz"
   "version" "4.14.179"
+
+"@types/masonry-layout@^4.2.5":
+  "integrity" "sha512-/DSIDMDsXlS+7JfzywA2zm9x+veO/z1QDcjKLS4OhDZH7sFdreKJbNFKb7jYA3NrY3bRvFGCamp5+DeIArLzow=="
+  "resolved" "https://registry.npmjs.org/@types/masonry-layout/-/masonry-layout-4.2.5.tgz"
+  "version" "4.2.5"
+  dependencies:
+    "@types/jquery" "*"
 
 "@types/mime@^1":
   "integrity" "sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw=="
@@ -2373,7 +2387,7 @@
   "resolved" "https://registry.npmjs.org/@types/sinonjs__fake-timers/-/sinonjs__fake-timers-8.1.1.tgz"
   "version" "8.1.1"
 
-"@types/sizzle@^2.3.2":
+"@types/sizzle@*", "@types/sizzle@^2.3.2":
   "integrity" "sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ=="
   "resolved" "https://registry.npmjs.org/@types/sizzle/-/sizzle-2.3.3.tgz"
   "version" "2.3.3"
@@ -3853,6 +3867,11 @@
   "integrity" "sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA=="
   "resolved" "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
   "version" "0.7.0"
+
+"chardet@^1.5.0":
+  "integrity" "sha512-Nj3VehbbFs/1ZnJJJaL3ztEf3Nu5Fs6YV/NBs6lyz/iDDHUU+X9QNk5QgPy1/5Rjtb/cGVf+NyazP7kVEJqKRg=="
+  "resolved" "https://registry.npmjs.org/chardet/-/chardet-1.5.0.tgz"
+  "version" "1.5.0"
 
 "charenc@0.0.2":
   "integrity" "sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc="
@@ -8675,7 +8694,7 @@
     "mdurl" "^1.0.1"
     "uc.micro" "^1.0.5"
 
-"masonry-layout@^4.2.0":
+"masonry-layout@^4.2.0", "masonry-layout@^4.2.2":
   "integrity" "sha512-iGtAlrpHNyxaR19CvKC3npnEcAwszXoyJiI8ARV2ePi7fmYhIud25MHK8Zx4P0LCC4d3TNO9+rFa1KoK1OEOaA=="
   "resolved" "https://registry.npmjs.org/masonry-layout/-/masonry-layout-4.2.2.tgz"
   "version" "4.2.2"

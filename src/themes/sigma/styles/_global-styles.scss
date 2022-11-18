@@ -49,6 +49,14 @@ header {
   color: #5e50a1;
 }
 
+.page-header {
+  font-family: Merriweather, serif;
+  font-size: 25px;
+  margin: 0 0;
+  padding-top: 30px;
+  color: #5e50a1;
+}
+
 .first-page-header {
   margin-bottom: 14px;
   font-size: 25px;
@@ -125,10 +133,6 @@ a {
   text-transform: none;
   font-weight: normal;
 }
-.card-title{
-  margin-bottom: 0;
-}
-
 h5, .h5{ font-size: 14px;}
 h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
   font-family: Source Sans Pro, Arial, sans-serif !important;
@@ -147,3 +151,9 @@ h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
     max-width: 1170px;
   }
 }
+
+.card-title{
+  margin-bottom: 0;
+}
+
+
