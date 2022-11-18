@@ -6,8 +6,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { Angulartics2 } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2';
+import { Angulartics2, Angulartics2GoogleAnalytics, Angulartics2GoogleTagManager } from 'angulartics2';
 
 import { AppComponent } from '../../app/app.component';
 
@@ -32,7 +31,7 @@ import { ServerAuthRequestService } from '../../app/core/auth/server-auth-reques
 import { ServerInitService } from './server-init.service';
 
 export function createTranslateLoader(transferState: TransferState) {
-  return new TranslateServerLoader(transferState, 'dist/server/assets/i18n/', '.json5');
+  return new TranslateServerLoader(transferState, 'dist/server/assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -61,6 +60,10 @@ export function createTranslateLoader(transferState: TransferState) {
     },
     {
       provide: Angulartics2GoogleAnalytics,
+      useClass: AngularticsProviderMock
+    },
+    {
+      provide: Angulartics2GoogleTagManager,
       useClass: AngularticsProviderMock
     },
     {

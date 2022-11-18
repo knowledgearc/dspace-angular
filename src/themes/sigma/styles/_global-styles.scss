@@ -37,8 +37,16 @@ header {
     height: 100%;
   }
   .navbar-light .navbar-nav .nav-link {
-     color: white !important;
-   }
+    color: white !important;
+  }
+}
+
+.page-header {
+  font-family: Merriweather, serif;
+  font-size: 25px;
+  margin: 0 0;
+  padding-top: 30px;
+  color: #5e50a1;
 }
 
 .page-header {
@@ -125,18 +133,27 @@ a {
   text-transform: none;
   font-weight: normal;
 }
-.card-title{
-  margin-bottom: 0;
-}
-
 h5, .h5{ font-size: 14px;}
 h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
   font-family: Source Sans Pro, Arial, sans-serif !important;
 }
 
+.metadata-name {
+  background: #eee;
+  font-weight: bold;
+}
+.simple-view-element{margin-bottom: 0;}
+.table {
+  margin-bottom: 0;
+}
 @media (min-width: 1200px){
   .container {
     max-width: 1170px;
   }
 }
+
+.card-title{
+  margin-bottom: 0;
+}
+
 

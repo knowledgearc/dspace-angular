@@ -55,7 +55,6 @@ import {
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
 import {ItemPageModule} from '../../app/item-page/item-page.module';
-// import {UntypedItemComponent} from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import {ItemPageComponent} from './app/item-page/simple/item-page.component';
 import {FullItemPageComponent} from './app/item-page/full/full-item-page.component';
 import {ItemMetadataComponent} from './app/item-page/edit-item-page/item-metadata/item-metadata.component';
@@ -115,6 +114,7 @@ const DECLARATIONS = [
     SearchModule,
     FormsModule,
     ResourcePoliciesModule,
+    // NgxMasonryModule,
     ComcolModule
   ],
   declarations: [

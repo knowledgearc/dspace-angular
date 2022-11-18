@@ -24,6 +24,7 @@ import { ContactComponent } from './app/contact/contact.component';
 import {LoginPageComponent} from './app/login-page/login-page.component';
 import {UntypedItemComponent} from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import {ItemPageModule} from '../../app/item-page/item-page.module';
+import {NgxMasonryModule} from "ngx-masonry";
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -45,15 +46,15 @@ const DECLARATIONS = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    SearchModule,
-    FormsModule,
-    RootModule,
-    NavbarModule,
-    BrowseByModule, ItemPageModule
-  ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        SearchModule,
+        FormsModule,
+        RootModule,
+        NavbarModule,
+        BrowseByModule, ItemPageModule, NgxMasonryModule
+    ],
   declarations: [
     DECLARATIONS,
     RootComponent,
