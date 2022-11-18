@@ -8,6 +8,7 @@ import { Context } from '../../../../../../../app/core/shared/context.model';
 import {
   UntypedItemComponent as BaseComponent
 } from '../../../../../../../app/item-page/simple/item-types/untyped-item/untyped-item.component';
+import {NgxMasonryOptions} from "ngx-masonry";
 
 /**
  * Component that represents an untyped Item page
@@ -20,4 +21,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UntypedItemComponent extends BaseComponent {
+  public masonryOptions: NgxMasonryOptions = {
+    gutter: 1,
+    horizontalOrder: true,
+    // itemSelector:".card",
+    itemSelector:".masonry-item",
+    columnWidth:150
+  };
 }

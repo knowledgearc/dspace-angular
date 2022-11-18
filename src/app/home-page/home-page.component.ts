@@ -13,9 +13,7 @@ export class HomePageComponent implements OnInit {
 
   site$: Observable<Site>;
   recentSubmissionspageSize: number;
-  constructor(
-    private route: ActivatedRoute,
-  ) {
+  constructor(private route: ActivatedRoute) {
     this.recentSubmissionspageSize = environment.homePage.recentSubmissions.pageSize;
   }
 
