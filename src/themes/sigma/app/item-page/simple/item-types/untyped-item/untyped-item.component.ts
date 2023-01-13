@@ -25,7 +25,12 @@ export class UntypedItemComponent extends BaseComponent {
     gutter: 1,
     horizontalOrder: true,
     // itemSelector:".card",
-    itemSelector:".masonry-item",
-    columnWidth:150
+    itemSelector:'.masonry-item',
+    columnWidth:300
   };
+
+  ngOnInit() {
+    super.ngOnInit();
+    console.log();
+  }
 }
