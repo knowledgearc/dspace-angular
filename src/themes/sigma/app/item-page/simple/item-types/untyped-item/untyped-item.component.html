@@ -241,7 +241,7 @@
               <div class="card-header purple-bg"><h6 class="card-title">Audio/Video Embed</h6></div>
               <div class="card-body">
                 <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.relation.embedded']);">
-                  <div [innerHTML]="mdValue.value"></div>
+                  <div [innerHtml]="mdValue.value"></div>
                 </ng-container>
               </div>
             </div>
