@@ -15,7 +15,7 @@
       <div class="col-md-3 col-sm-4">
         <div class="card" id="thumbnail-card">
           <div class="card-header purple-bg"><h5 class="card-title">View File(s)</h5></div>
-          <div class="card-body">
+          <div class="card-body p-0">
             <ng-container *ngIf="!mediaViewer.image">
               <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
                 <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
