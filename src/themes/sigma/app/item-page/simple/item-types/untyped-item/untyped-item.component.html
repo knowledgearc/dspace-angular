@@ -24,6 +24,47 @@
             </ng-container>
           </div>
         </div>
+        <div class="card mt-2">
+          <div class="card-header purple-bg"><h5 class="card-title">Author Information</h5></div>
+          <div class="card-body p-0">
+            <ng-container *ngIf="object.hasMetadata(['dc.contributor.author']);">
+              <h5 class="simple-view-element-header">Author(s)</h5>
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.contributor.author']);">
+                <div class="simple-view-element-body">
+                  <a [href]="" >{{mdValue.value}}</a>
+                </div>
+              </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="object.hasMetadata(['dc.author.details']);">
+              <h5 class="simple-view-element-header">Details</h5>
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.author.details']);">
+                <div class="simple-view-element-body">
+                  <a [href]="" >{{mdValue.value}}</a>
+                </div>
+              </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="object.hasMetadata(['dc.contributor.department']);">
+              <h5 class="simple-view-element-header">Sigma Affiliation</h5>
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.contributor.department']);">
+                <div class="simple-view-element-body">
+                  <a [href]="" >{{mdValue.value}}</a>
+                </div>
+              </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="object.hasMetadata(['dc.contributor.affiliation']);">
+              <h5 class="simple-view-element-header">Contributor Affiliation(s)</h5>
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.contributor.affiliation']);">
+                <div class="simple-view-element-body">
+                  <a [href]="" >{{mdValue.value}}</a>
+                </div>
+              </ng-container>
+            </ng-container>
+
+          </div>
+        </div>
       </div>
       <div class="col-md-9 col-sm-8">
         <div class="card">

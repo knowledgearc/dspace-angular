@@ -151,3 +151,10 @@ h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
 .card-title{
   margin-bottom: 0;
 }
+h5.simple-view-element-header, .simple-view-element-body{
+  padding:15px;
+}
+
+h5.simple-view-element-header{
+  background-color: #f5f5f5;
+}

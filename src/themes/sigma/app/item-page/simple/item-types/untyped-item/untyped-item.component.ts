@@ -21,16 +21,9 @@ import {NgxMasonryOptions} from "ngx-masonry";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UntypedItemComponent extends BaseComponent {
-  public masonryOptions: NgxMasonryOptions = {
-    gutter: 1,
-    horizontalOrder: true,
-    // itemSelector:".card",
-    itemSelector:'.masonry-item',
-    columnWidth:300
-  };
 
   ngOnInit() {
     super.ngOnInit();
-    console.log();
+    console.log(this.object);
   }
 }
