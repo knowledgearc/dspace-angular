@@ -7,15 +7,275 @@
   </div>
   <div class="col-md-9 col-sm-8">
 
-    <h2 class="page-header first-page-header" *ngIf="object?.hasMetadata(['dc.title'])">
-      {{ object.firstMetadataValue(['dc.title']) }}
-    </h2>
+    <div class="title-container">
+
+      <h2 class="page-header first-page-header" *ngIf="object?.hasMetadata(['dc.title'])">
+        {{ object.firstMetadataValue(['dc.title']) }}
+      </h2>
+      <div class="alert alert-dismissible alert-link alert-info m-2" *ngIf="object.hasMetadata(['dc.title.alternative'])">
+        Other title(s) <i class="fas fa-caret-right fa-xs fa-fw"></i>
+        <span class="badge text-bg-secondary">
+          <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.title.alternative']);">
+            {{ mdValue.value }}
+          </ng-container>
+        </span>
+      </div>
+    </div>
 
     <div class="row">
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-9 col-sm-8">
+
+        <ds-truncatable [id]="object?.id" *ngIf="object.hasMetadata(['dc.description.abstract'])">
+          <div class="abstract-container">
+            <h1 class="">Abstract</h1>
+            <ds-truncatable-part [id]="object.id" [minLines]="4">
+              <p [innerHTML]="object?.firstMetadataValue('dc.description.abstract')"></p>
+            </ds-truncatable-part>
+          </div>
+        </ds-truncatable>
+
+        <div class="note-container" *ngIf="object.hasMetadata(['dc.description.note'])">
+          <h1 class="">Notes</h1>
+          <p class="note-text" [innerHTML]="object?.firstMetadataValue(['dc.description.note'])"></p>
+        </div>
+
+        <div class="description-container" *ngIf="object.hasMetadata(['dc.description'])">
+          <h1 class="">Description</h1>
+          <p class="description-text" [innerHTML]="object?.firstMetadataValue(['dc.description'])"></p>
+        </div>
+
+        <div class="sponsorship-container" *ngIf="object.hasMetadata(['dc.description.sponsorship'])">
+          <h1 class="">Funders</h1>
+          <p class="sponsorship-text" [innerHTML]="object?.firstMetadataValue(['dc.description.sponsorship'])"></p>
+        </div>
+
+        <div class="card" *ngIf="object.hasMetadata(['dc.identifier.uri'])">
+          <div class="card-header purple-bg">
+            <h6 class="card-title">Item Link - Use this link for citations and online mentions.</h6>
+          </div>
+          <div class="card-body p-2">
+            <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.identifier.uri']);">
+              <a [href]="mdValue.value" target="_blank" >{{mdValue.value}}</a>
+            </ng-container>
+          </div>
+        </div>
+
+        <div  class="card mt-4" *ngIf="object.hasMetadata(['dc.rights.holder'])">
+          <div class="card-header purple-bg"><h6 class="card-title">Rights Holder</h6></div>
+          <div class="card-body">
+            <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.rights.holder']);">
+              <div [innerHTML]="mdValue.value"></div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div  class="card mt-4" *ngIf="object.hasMetadata(['dc.relation.embedded'])">
+          <div class="card-header purple-bg"><h6 class="card-title">Audio/Video Embed</h6></div>
+          <div class="card-body">
+            <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.relation.embedded']);">
+              <div [innerHtml]="mdValue.value"></div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="metadata-container mt-2" *ngIf="object.hasMetadata(['dc.type', 'dc.description.acquisition', 'dc.description.reviewstatus', 'dc.description.reviewtype'])">
+          <h6 class="metadata-container-header">Type Information</h6>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.type'])">
+            Type <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.type']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.description.acquisition'])">
+            Acquisition <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description.acquisition']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.description.reviewstype'])">
+            Review Type <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description.reviewstype']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.description.reviewstatus'])">
+            Review Status <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description.reviewstatus']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.format'])">
+            Format <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.format']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+        </div>
+
+        <div class="metadata-container mt-4" *ngIf="object.hasMetadata(['dc.evidence.level', 'dc.research.approach', 'dc.subject.keyword', 'dc.subject'])">
+          <h6 class="metadata-container-header">Category Information</h6>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.evidence.level'])">
+            Evidence Level <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.evidence.level']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.research.approach'])">
+            Research Approach <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.research.approach']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.subject'])">
+            Subject(s) <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.subject']);">
+                {{ mdValue.value }};
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.subject.keyword'])">
+            Keyword(s) <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.subject.keyword']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+        </div>
+
+        <div class="metadata-container mt-4" *ngIf="object.hasMetadata(['dc.type.version', 'dc.date.accessioned', 'dc.date.issued', 'dc.publisher'])">
+          <h6 class="metadata-container-header">Original Publication Info</h6>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.publisher'])">
+            Publisher <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.publisher']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.date.issued'])">
+            Date <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.date.issued']);">
+                {{ mdValue.value|date:'yyyy-MM-dd' }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.date.accessioned'])">
+            Posted <i class="fas fa-caret-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.date.accessioned']);">
+                {{ mdValue.value|date:'yyyy-MM-dd' }}
+              </ng-container>
+            </span>
+          </button>
+        </div>
+
+        <div class="metadata-container my-4" *ngIf="object.hasMetadata(['dc.conference.host', 'dc.conference.location', 'dc.conference.name', 'dc.date.conferenceyear'])">
+          <h6 class="metadata-container-header">Conference Information</h6>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.conference.name'])">
+            Name <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.conference.name']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.conference.location'])">
+            Location <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.conference.location']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.conference.host'])">
+            Host <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.conference.host']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['dc.date.conferenceyear'])">
+            Year <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.date.conferenceyear']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+        </div>
+
+        <div class="metadata-container my-4" *ngIf="object.hasMetadata(['thesis.degree.grantor', 'thesis.degree.level', 'thesis.degree.year'])">
+          <h6 class="metadata-container-header">Degree Information</h6>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['thesis.degree.grantor'])">
+            Grantor <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['thesis.degree.grantor']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['thesis.degree.level'])">
+            Level <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['thesis.degree.level']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+          <button type="button" class="btn border m-2" *ngIf="object.hasMetadata(['thesis.degree.year'])">
+            Year <i class="fas fa-chevron-right fa-xs fa-fw"></i>
+            <span class="badge text-bg-secondary">
+              <ng-container *ngFor="let mdValue of object?.allMetadata(['thesis.degree.year']);">
+                {{ mdValue.value }}
+              </ng-container>
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-3 col-sm-4 bg-light pt-3">
         <div class="card" id="thumbnail-card">
           <div class="card-header purple-bg"><h5 class="card-title">View File(s)</h5></div>
-          <div class="card-body p-0">
+          <div class="card-body p-0 thumbnail-card">
             <ng-container *ngIf="!mediaViewer.image">
               <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
                 <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
@@ -63,238 +323,6 @@
               </ng-container>
             </ng-container>
 
-          </div>
-        </div>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        <div class="card">
-          <div class="card-header purple-bg">
-            <h5 class="card-title">Item Information</h5>
-          </div>
-          <div class="card-body">
-
-            <div class="card" *ngIf="object.hasMetadata(['dc.identifier.uri'])">
-              <div class="card-header">
-                <h6 class="card-title">Item Link - Use this link for citations and online mentions.</h6>
-              </div>
-              <div class="card-body p-2">
-                <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.identifier.uri']);">
-                  <a [href]="mdValue.value" target="_blank" >{{mdValue.value}}</a>
-                </ng-container>
-              </div>
-            </div>
-
-            <div class="card mt-4" *ngIf="object.hasMetadata(['dc.description.abstract'])">
-              <div class="card-header"><h6 class="card-title">Abstract</h6></div>
-              <div class="card-body"
-                   [innerHTML]="object?.firstMetadataValue(['dc.description.abstract'])">
-              </div>
-            </div>
-
-            <div class="card mt-4" *ngIf="object.hasMetadata(['dc.description.note'])">
-              <div class="card-header"><h6 class="card-title">Notes</h6></div>
-              <div class="card-body">
-                <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description.note']);">
-                  <div [innerHTML]="mdValue.value"></div>
-                </ng-container>
-              </div>
-            </div>
-            <div  class="card mt-4" *ngIf="object.hasMetadata(['dc.description'])">
-              <div class="card-header"><h6 class="card-title">Description</h6></div>
-              <div class="card-body">
-                <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description']);">
-                  <div [innerHTML]="mdValue.value"></div>
-                </ng-container>
-              </div>
-            </div>
-            <div class="row">
-
-              <div class="card m-2" style="max-width: 280px;" *ngIf="object.hasMetadata(['dc.description.sponsorship'])">
-                <div class="card-header purple-bg"><h6 class="">Funders</h6></div>
-                <div class="card-body">
-                  <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.description.sponsorship']);">
-                    <div [innerHTML]="mdValue.value"></div>
-                  </ng-container>
-                </div>
-              </div>
-
-              <div class="card m-2" style="max-width: 280px;">
-                <div class="card-header purple-bg"><h6 class="">Type Information</h6></div>
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                        <tr *ngIf="object.hasMetadata(['dc.type'])">
-                          <td class="metadata-name">Type</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['dc.type'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        <tr *ngIf="object.hasMetadata(['dc.description.acquisition'])">
-                          <td class="metadata-name">Acquisition</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['dc.description.acquisition'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        <tr *ngIf="object.hasMetadata(['dc.description.reviewstatus'])">
-                          <td class="metadata-name">Review Status</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['dc.description.reviewstatus'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        <tr *ngIf="object.hasMetadata(['dc.description.reviewtype'])">
-                          <td class="metadata-name">Review Type</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['dc.description.reviewtype'])"></ds-metadata-values>
-                          </td>
-                        <tr *ngIf="object.hasMetadata(['dc.format'])">
-                          <td class="metadata-name">Format</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['dc.format'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="card m-2" style="max-width: 280px">
-                <div class="card-header purple-bg"><h6 class="card-title">Category Information</h6></div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tbody>
-                      <tr *ngIf="object.hasMetadata(['dc.evidence.level'])">
-                        <td class="metadata-name">Evidence Level</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.evidence.level'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.research.approach'])">
-                        <td class="metadata-name">Research Approach</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.research.approach'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.subject'])">
-                        <td class="metadata-name">Keywords</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.subject'])" [separator]="'; '"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.subject.keyword'])">
-                        <td class="metadata-name">Keywords</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.subject.keyword'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="card m-2" style="max-width: 280px;" >
-                <div class="card-header purple-bg"><h6 class="card-title">Original Publication Info</h6></div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tbody>
-                      <tr *ngIf="object.hasMetadata(['dc.publisher'])">
-                        <td class="metadata-name">Publisher</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.publisher'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.date.issued'])">
-                        <td class="metadata-name">Published</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.date.issued'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.date.accessioned'])">
-                        <td class="metadata-name">Posted</td>
-                        <td class="metadata-value">
-                          <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.date.accessioned']);">
-                            <span>{{ mdValue.value|date:'yyyy-MM-dd' }}</span>
-                          </ng-container>
-                        </td>
-                      </tr>
-                      <tr *ngIf="object.hasMetadata(['dc.type.version'])">
-                        <td class="metadata-name">Version</td>
-                        <td class="metadata-value">
-                          <ds-metadata-values
-                            [mdValues]="object?.allMetadata(['dc.type.version'])"></ds-metadata-values>
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="card m-2" style="max-width: 280px;"  *ngIf="object.hasMetadata(['thesis.degree.grantor', 'thesis.degree.level', 'thesis.degree.year'])">
-                  <div class="card-header purple-bg"><h6 class="card-title">Degree Information</h6></div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tbody>
-                        <tr *ngIf="object.hasMetadata(['thesis.degree.grantor'])">
-                          <td class="metadata-name">Grantor</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['thesis.degree.grantor'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        <tr *ngIf="object.hasMetadata(['thesis.degree.level'])">
-                          <td class="metadata-name">Level</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['thesis.degree.level'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        <tr *ngIf="object.hasMetadata(['thesis.degree.year'])">
-                          <td class="metadata-name">Year</td>
-                          <td class="metadata-value">
-                            <ds-metadata-values
-                              [mdValues]="object?.allMetadata(['thesis.degree.year'])"></ds-metadata-values>
-                          </td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-              </div>
-
-            </div>
-
-            <div  class="card mt-4" *ngIf="object.hasMetadata(['dc.relation.embedded'])">
-              <div class="card-header purple-bg"><h6 class="card-title">Audio/Video Embed</h6></div>
-              <div class="card-body">
-                <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.relation.embedded']);">
-                  <div [innerHtml]="mdValue.value"></div>
-                </ng-container>
-              </div>
-            </div>
-
-            <div  class="card mt-4" *ngIf="object.hasMetadata(['dc.rights.holder'])">
-              <div class="card-header purple-bg"><h6 class="card-title">Rights Holder</h6></div>
-              <div class="card-body">
-                <ng-container *ngFor="let mdValue of object?.allMetadata(['dc.rights.holder']);">
-                  <div [innerHTML]="mdValue.value"></div>
-                </ng-container>
-              </div>
-            </div>
           </div>
         </div>
       </div>

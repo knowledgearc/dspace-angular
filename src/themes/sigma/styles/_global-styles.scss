@@ -2,7 +2,9 @@
 
 // imports the base global style
 @import '../../../styles/_global-styles.scss';
-
+:root{
+  --sigma-purple:#5e50a1;
+}
 body {
   font-size: 14px !important;
   line-height: 1.52857 !important;
@@ -118,7 +120,7 @@ a {
 }
 
 .purple-bg{
-  background-color: #5e50a1;
+  background-color: var(--sigma-purple);
   color: #fff;
 }
 
@@ -163,3 +165,57 @@ h5.simple-view-element-header{
 a.btn-primary{
   color: white !important;
 }
+.metadata-container h6{
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+    max-width: 90%;
+}
+.metadata-container h6::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background: var(--sigma-purple);
+  height: 3px;
+  margin-bottom: 10px;
+  border-radius: 23px;
+  left: 0;
+  bottom: -20px;
+}
+
+.abstract-container, .note-container, .description-container, .sponsorship-container, .metadata-container{ h1::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background: var(--sigma-purple);
+  height: 3px;
+  margin-bottom: 10px;
+  border-radius: 23px;
+  left: 0;
+  bottom: -20px;
+}}
+
+.metadata-container .btn .badge{
+  //border-left: solid 1px black;
+  margin: 0;
+  //border-radius: 0;
+  color: var(--sigma-purple);
+}
+
+.abstract-container {
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.abstract-container .btn {
+  word-break: break-all;
+}
+.abstract-container, .note-container, .description-container, .sponsorship-container{ h1 {
+  font-size: 25px;
+  position: relative;
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 90%;
+}}
+
